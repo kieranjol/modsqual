@@ -1,4 +1,4 @@
-#modsqual
+# modsqual
 
 (This is still very much in progress, so use at your own risk! Constructive feedback and pull requests welcome.)
 
@@ -6,14 +6,14 @@ modsqual is a Python library to help you evaluate the quality of your MODS metad
 
 modsqual also provides multiple representations of MODS elements to best suit the tools and skills you have at hand. modsqual can return elements in XML, Python ordered dictionaries, or just the text values of an top-level element.   
 
-##Installation
+## Installation
 
 Install via pip on the command line:
 ```
 pip install modsqual
 ```
 
-##Usage
+## Usage
 
 (requires [lxml](http://lxml.de/) and [xmltodict](https://github.com/martinblech/xmltodict))  
 
@@ -28,7 +28,7 @@ modsdoc = read(f)
 record = modsqual.Mods(modsdoc)
 ```
 
-###Well-formed XML and element existence
+### Well-formed XML and element existence
 
 Check that the document is wellformed:  
 
@@ -46,7 +46,7 @@ Each top-level MODS element is represented as an attribute of the Mods object. C
 True  
 ```
 
-###Element counts
+### Element counts
 
 View the counts of top-level elements present in your MODS object:
 
@@ -75,7 +75,7 @@ Return the count of a top-level element in the MODS document:
 ```
 
 
-###Matching elements and values
+### Matching elements and values
 
 The match() function allows you to return matching elements by attribute value, regular expression, or xpath. This function is a wrapper around the etree.XPath method and returns a list of xpath results. Depending on your query, this will either be a list of text values or a list of elements. You can then convert element results to Python dictionaries using the todict() function.
 
@@ -121,7 +121,7 @@ print divisions
 [OrderedDict([(u'location', OrderedDict([(u'@xmlns', u'http://www.loc.gov/mods/v3'), (u'@xmlns:xsi', u'http://www.w3.org/2001/XMLSchema-instance'), (u'physicalLocation', [OrderedDict([(u'@authority', u'marcorg'), (u'@type', u'repository'), ('#text', u'nn')]), OrderedDict([(u'@type', u'division'), ('#text', u'Jerome Robbins Dance Division')]), OrderedDict([(u'@type', u'division_short_name'), ('#text', u'Jerome Robbins Dance Division')]), OrderedDict([(u'@type', u'code'), ('#text', u'DAN')])])]))]), OrderedDict([(u'location', OrderedDict([(u'@xmlns', u'http://www.loc.gov/mods/v3'), (u'@xmlns:xsi', u'http://www.w3.org/2001/XMLSchema-instance'), (u'shelfLocator', u'*MGZFD Del F Bal 1'), (u'physicalLocation', [OrderedDict([(u'@type', u'division'), ('#text', u'Jerome Robbins Dance Division')]), OrderedDict([(u'@type', u'division_short_name'), ('#text', u'Jerome Robbins Dance Division')]), OrderedDict([(u'@type', u'code'), ('#text', u'DAN')])])]))])]
 ```
 
-###Data structures
+### Data structures
 
 For each top-level element, you can output data as a list of XML fragments:  
 
@@ -147,7 +147,7 @@ or a list of text values:
 ['United States', 'Great Britain -- Colonies -- America', 'North America']
 ```
 
-###lxml
+### lxml
 
 If you're familiar with [lxml objecify](http://lxml.de/objectify.html), you can treat any top-level element as an lxml object by calling the mods attribute:
 
